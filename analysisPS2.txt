@@ -1,0 +1,47 @@
+Complexity of Functions :
+-------------------------
+
+			Time Complexity
+
+1. readActMovFile() 		: O(l*3) + O(2*l) = O(3*l+l^2) where 
+					# l=no. of lines in files
+
+2. displayActMov() 		: O(No. of Actors) + O(No. of Movies) = O(A+M) = O(3*l)
+
+3. displayMoviesOfActors() 	: O(No. of Lines) = O(l)
+
+4. displayActorsOfMovies() 	: O(2)
+					# As maximum number of Actors can be two only
+
+5. findMovieRelation() 		: O(2*2)
+
+6. findMovieTransRelation()	: O(2*2)+O(4*2)+O(2)+O(4) = O(18)
+
+7. __main__			: O(6)
+
+O(T) = 3*l+2*l+3*l+l+2+4+18+6 = 9*l+30 = O(l)
+
+---------------------------------------------------------------------------------------------------
+
+			Space Complexity
+
+Global 				: O(l*sizeof(String)) + O((l^2+2)*sizeof(int))
+
+1. readActMovFile() 		: O((2+2*l+1+2)*sizeof(int)) + O(total number of characters)
+					# l=no. of lines in files
+
+2. displayActMov() 		: O(1*sizeof(int))
+
+3. displayMoviesOfActors() 	: O(1*sizeof(int))
+
+4. displayActorsOfMovies() 	: O(1*sizeof(int))
+
+5. findMovieRelation() 		: O(1*sizeof(int))
+
+6. findMovieTransRelation()	: O((3+2+1+1)*sizeof(int)) + O(4*(no. of characters))
+
+7. __main__			: O(1*sizeof(int)) + O(5*(total characters))
+
+O(S) = (l^2+2+2+2*l+3+1+1+1+1+7+1)*sizeof(int) + (l+1+4+5)*(count of character)
+O(S) = (l^2+2*l+19)*sizeof(int)+(l+10)*(count of characters)
+O(S) = O(l^2)
